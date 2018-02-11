@@ -1,1 +1,3 @@
-# HWINT107
+# INT105
+
+Inheritance Object
