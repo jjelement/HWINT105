@@ -35,4 +35,24 @@ public class Serie extends Movie {
                 "serieEps=" + Arrays.toString(serieEps) +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj != null && obj instanceof Serie) {
+            Serie temp = (Serie) obj;
+            if(this.getName() == temp.getName() && temp.getSerieEps().length == this.serieEps.length) {
+
+                for(int i = 0; i < this.serieEps.length; i++) {
+                    SerieEp tempEp = temp.getSerieEps()[i];
+                    SerieEp ep = this.serieEps[i];
+
+                    if(tempEp.getTitle() != ep.getTitle()) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
 }

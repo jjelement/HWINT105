@@ -24,4 +24,12 @@ public class Theater {
                 "name='" + name + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj != null && obj instanceof Theater) {
+            return ((Theater)obj).name == this.name;
+        }
+        return false;
+    }
 }
